@@ -1,0 +1,30 @@
+{
+  "id": "report-reader",
+  "name": "Report Reader",
+  "organisation": "Swasthya Record Systems",
+  "color": "#066a9e",
+  "topic": "Lab-report reading",
+  "description": "Read a printed report and prepare verified values for clinical review.",
+  "input": "document",
+  "model": "Tesseract LSTM OCR",
+  "modelRole": "Extract printed report text; no clinical interpretation or automatic insertion of unverified values.",
+  "source": "https://github.com/tesseract-ocr/tesseract",
+  "fields": [
+    [
+      "critical",
+      "Report explicitly marked critical by the laboratory",
+      "boolean"
+    ],
+    [
+      "unclear",
+      "Test name, value, unit or date unclear",
+      "boolean"
+    ]
+  ],
+  "sample": {
+    "critical": false,
+    "unclear": false
+  },
+  "note": "SYNTHETIC LAB REPORT\nReport date: 03 Oct 2026\nGlucose: 126 mg/dL\nSample context must be checked by clinician.",
+  "guidance": "https://www.mohfw.gov.in/sites/default/files/NP-NCD%20Operational%20Guidelines.pdf"
+}
